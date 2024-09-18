@@ -15,9 +15,3 @@ def create_app():
     # Инициализация расширений
     db.init_app(app)
     migrate.init_app(app, db)
-    
-    # Регистрация контроллеров (BluePrints)
-    from app.controllers import main_bp
-    app.register_blueprint(main_bp)
-    
-    return app
