@@ -1,6 +1,6 @@
 from app import db
-from app.Event.event.entity import Event
-from app.Organization.organization.service import OrganizerService
+from app.Event import Event
+from app.Organization import OrganizerService
 from datetime import datetime
 
 class EventService:

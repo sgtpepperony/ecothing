@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.User_event_registration.ev_reg.service import UserEventRegistrationService
+from User_event_registration import UserEventRegistrationService
 
 user_event_bp = Blueprint('user_event_bp', __name__)
 

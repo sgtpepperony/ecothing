@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.Organization.organization.service import OrganizerService
+from app.Organization import OrganizerService
 
 organizer_bp = Blueprint('organizer', __name__)
 

@@ -1,8 +1,8 @@
 from app import db
-from app.Depth.d.entity import DepartmentEmployee
-from app.Event.event.entity import Event
-from app.User.user.entity import User
-from app.Organization.organization.entity import Organization
+from app.Depth import DepartmentEmployee
+from app.Event import Event
+from app.User import User
+from app.Organization import Organization
 
 class DepartmentEmployeeService:
     @staticmethod
@@ -32,7 +32,7 @@ class DepartmentEmployeeService:
 
     @staticmethod
     def export_data(filters):
-        query = db.session.query(Event, Organizer, User)
+        query = db.session.query(Event, Organization, User)
 
         # Применяем фильтры
         if filters.get('gender'):

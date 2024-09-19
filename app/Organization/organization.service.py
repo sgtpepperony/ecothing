@@ -1,5 +1,5 @@
 from app import db
-from app.Organization.organization.entity import Organization
+from app.Organization import Organization
 
 class OrganizerService:
     @staticmethod

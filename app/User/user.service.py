@@ -1,7 +1,7 @@
 from app import db
-from app.User.user.entity import User
-from app.Event.event.entity import Event  # Предполагается, что Event уже реализован
-from app.User_event_registration.ev_reg.entity import UserEventRegistration  # Связующая таблица для регистрации на события
+from app.User import User
+from app.Event import Event  # Предполагается, что Event уже реализован
+from app.User_event_registration import UserEventRegistration  # Связующая таблица для регистрации на события
 
 class UserService:
     @staticmethod

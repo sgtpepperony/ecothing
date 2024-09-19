@@ -1,5 +1,5 @@
 from flask import Blueprint
-from app.User.user.controller import user_controller
+from app.User import user_controller
 
 def register_user_module(app):
     """Регистрация контроллера пользователя"""

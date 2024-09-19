@@ -1,7 +1,7 @@
-from app import db
-from app.User_event_registration.ev_reg.entity import UserEventRegistration
-import qrcode
-from io import BytesIO
+from .. import db
+from User_event_registration import UserEventRegistration
+#import qrcode 
+#from io import BytesIO
 
 class UserEventRegistrationService:
     
@@ -13,16 +13,16 @@ class UserEventRegistrationService:
             return existing_registration
         
         # Генерация QR-кода для пользователя
-        qr_code_data = f'user_{user_id}_event_{event_id}'
-        qr_code = qrcode.make(qr_code_data)
-        qr_buffer = BytesIO()
-        qr_code.save(qr_buffer)
-        qr_code_str = qr_buffer.getvalue().hex()  # Сохранение QR-кода в строковом формате
+        #qr_code_data = f'user_{user_id}_event_{event_id}'
+        #qr_code = qrcode.make(qr_code_data)
+        #qr_buffer = BytesIO()
+        #qr_code.save(qr_buffer)
+        #qr_code_str = qr_buffer.getvalue().hex()  # Сохранение QR-кода в строковом формате
         
-        registration = UserEventRegistration(user_id=user_id, event_id=event_id, qr_code=qr_code_str)
-        db.session.add(registration)
-        db.session.commit()
-        return registration
+        #registration = UserEventRegistration(user_id=user_id, event_id=event_id, qr_code=qr_code_str)
+        #db.session.add(registration)
+        #db.session.commit()
+        #return registration
 
     @staticmethod
     def mark_attendance(user_id, event_id):

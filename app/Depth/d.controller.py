@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.Depth.d.service import DepartmentEmployeeService
+from app.Depth import DepartmentEmployeeService
 
 department_employee_blueprint = Blueprint('department_employee', __name__)
 
