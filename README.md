@@ -21,9 +21,10 @@
 ![register q](https://github.com/user-attachments/assets/05945983-7f9f-46de-a83d-81f7e9e60121)
 
 ![register pers](https://github.com/user-attachments/assets/7b87a002-cb86-49fd-96a5-e926d8a16702)
-![register org](https://github.com/user-attachme
+![register org](https://github.com/user-attachments/assets/14c608da-f641-4895-bd6a-a78b5cf99043)
+
 ![register gov](https://github.com/user-attachments/assets/275f7d18-b1f2-432c-8f50-c7660b3a0883)
-nts/assets/14c608da-f641-4895-bd6a-a78b5cf99043)
+
 
 И небольшая порция страницы для организатора, для добавления участников и мероприятий
 
