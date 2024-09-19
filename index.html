@@ -3,43 +3,971 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Default Website</title>
+    <title>Zelenka</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+    <style>
+  .header {
+    background-color: rgba(254, 254, 250, 1);
+    display: flex;
+    min-height: 90px;
+    width: 100%;
+    align-items: center;
+    gap: 40px 100px;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 11px 98px;
+    font: 400 16px 'DM Sans', sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  .logo {
+    width: 68px;
+    align-self: stretch;
+    margin: auto 0;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .nav-menu {
+    display: flex;
+    min-width: 240px;
+    align-items: center;
+    gap: 40px 48px;
+    color: #7bde6c;
+    text-align: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin: auto 0;
+  }
+
+  @media (max-width: 991px) {
+    .nav-menu {
+      max-width: 100%;
+    }
+  }
+
+  .nav-link {
+    align-self: stretch;
+    margin: auto 0;
+  }
+
+  .vertical-divider {
+    align-self: stretch;
+    width: 0px;
+    height: 21px;
+    margin: auto 0;
+    border: 1px solid rgba(123, 222, 108, 1);
+  }
+
+  .auth-buttons {
+    display: flex;
+    min-width: 240px;
+    align-items: start;
+    gap: 16px;
+    white-space: nowrap;
+    justify-content: start;
+    width: 377px;
+    margin: auto 0;
+  }
+
+  @media (max-width: 991px) {
+    .auth-buttons {
+      white-space: initial;
+    }
+  }
+
+  .btn-outlined {
+    border-radius: 50px;
+    color: #7bde6c;
+    padding: 12px 20px;
+    border: 1px solid rgba(123, 222, 108, 1);
+  }
+
+  .btn-filled {
+    border-radius: 50px;
+    background-color: rgba(123, 222, 108, 1);
+    color: #fff;
+    padding: 12px 20px;
+    border: 1px solid rgba(123, 222, 108, 1);
+  }
+</style>
+<header class="header">
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/db3f244f20eaf5ea9997140ed0dc66b8fc1c6ac0638ebc18dcbeca146fd3259b?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="Company Logo" class="logo" />
+  <nav class="nav-menu">
+    <a href="#organizers" class="nav-link" tabindex="0">Организаторам</a>
+    <a href="#about" class="nav-link" tabindex="0">О нас</a>
+    <a href="#events" class="nav-link" tabindex="0">События рядом</a>
+    <a href="#contacts" class="nav-link" tabindex="0">Контакты</a>
+    <a href="#news" class="nav-link" tabindex="0">Новости</a>
+  </nav>
+  <div class="vertical-divider"></div>
+  <div class="auth-buttons">
+    <button type="button" class="btn-outlined">Войти</button>
+    <button type="button" class="btn-filled">Зарегистрироваться</button>
+  </div>
+</header>
 <body>
+    <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 1027px;
+    width: 100%;
+    align-items: center;
+    padding: 90px 80px 0;
+  }
+
+  @media (max-width: 991px) {
+    .container {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  .background-img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 1448px;
+    flex-direction: column;
+  }
+
+  .main-title {
+    color: rgba(254, 254, 250, 1);
+    font: 600 126px Involve, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .main-title {
+      max-width: 100%;
+      font-size: 40px;
+    }
+  }
+
+  .section {
+    display: flex;
+    margin-top: 34px;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 7px;
+  }
+
+  .section-title {
+    color: rgba(254, 254, 250, 1);
+    align-self: start;
+    font: 500 64px Involve, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .section-title {
+      max-width: 100%;
+      font-size: 40px;
+    }
+  }
+
+  .news-wrapper {
+    margin-top: 34px;
+    width: 100%;
+  }
+
+  .news-column {
+    gap: 20px;
+    display: flex;
+  }
+
+  @media (max-width: 991px) {
+    .news-column {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+
+  .main-news-container {
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+  }
+
+  @media (max-width: 991px) {
+    .main-news-container {
+      width: 100%;
+    }
+  }
+
+  .main-news {
+    border-radius: 8px 8px 0 0;
+    background-color: rgba(254, 254, 250, 1);
+    flex-grow: 1;
+    width: 100%;
+    padding: 34px 80px 34px 22px;
+  }
+
+  @media (max-width: 991px) {
+    .main-news {
+      max-width: 100%;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+
+  .main-news-content {
+    gap: 20px;
+    display: flex;
+  }
+
+  @media (max-width: 991px) {
+    .main-news-content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+
+  .news-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  @media (max-width: 991px) {
+    .news-image-wrapper {
+      width: 100%;
+    }
+  }
+
+  .news-image {
+    aspect-ratio: 0.75;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 8px;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 991px) {
+    .news-image {
+      margin-top: 40px;
+    }
+  }
+
+  .news-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .news-text-wrapper {
+      width: 100%;
+    }
+  }
+
+  .news-text {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    color: rgba(20, 20, 5, 1);
+    margin: auto 0;
+  }
+
+  @media (max-width: 991px) {
+    .news-text {
+      margin-top: 40px;
+    }
+  }
+
+  .news-title {
+    font: 500 54px Involve, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .news-title {
+      font-size: 40px;
+    }
+  }
+
+  .news-description {
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 69px;
+  }
+
+  @media (max-width: 991px) {
+    .news-description {
+      margin-top: 40px;
+    }
+  }
+
+  .read-more {
+    border-radius: 8px;
+    background-color: rgba(123, 222, 108, 1);
+    align-self: start;
+    margin-top: 80px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 35px 40px;
+  }
+
+  @media (max-width: 991px) {
+    .read-more {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+
+  .mini-news-container {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+  }
+
+  @media (max-width: 991px) {
+    .mini-news-container {
+      width: 100%;
+    }
+  }
+
+  .mini-news {
+    border-radius: 8px 8px 0 0;
+    background-color: rgba(254, 254, 250, 1);
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    color: rgba(20, 20, 5, 1);
+    line-height: 24px;
+    margin: 0 auto;
+    padding: 43px 27px;
+  }
+
+  @media (max-width: 991px) {
+    .mini-news {
+      max-width: 100%;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+
+  .mini-news-block {
+    border-radius: 14px;
+    background-color: rgba(254, 254, 250, 1);
+    display: flex;
+    padding-right: 29px;
+    gap: 15px;
+    border: 2px solid rgba(20, 20, 5, 1);
+  }
+
+  @media (max-width: 991px) {
+    .mini-news-block {
+      padding-right: 20px;
+    }
+  }
+
+  .mini-news-img {
+    aspect-ratio: 0.88;
+    object-fit: contain;
+    object-position: center;
+    width: 219px;
+    border-radius: 4px 0 0 4px;
+    max-width: 100%;
+  }
+
+  .mini-news-text {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+  }
+
+  .mini-news-title {
+    font-size: 24px;
+    font-weight: 500;
+    align-self: start;
+  }
+
+  .mini-news-description {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 17px;
+  }
+
+  .mini-news-block-2 {
+    border-radius: 14px;
+    background-color: rgba(254, 254, 250, 1);
+    display: flex;
+    margin-top: 34px;
+    padding-right: 29px;
+    gap: 15px;
+    border: 2px solid rgba(20, 20, 5, 1);
+  }
+
+  .mini-news-img-2 {
+    aspect-ratio: 0.88;
+    object-fit: contain;
+    object-position: center;
+    width: 219px;
+    border-radius: 4px 0 0 4px;
+    max-width: 100%;
+  }
+
+  .mini-news-text-2 {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+  }
+</style>
+
+<section class="container">
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/30d48c27cbb831ff04437dab22670930125cd2a9041798194dcadac83897cc27?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" class="background-img" alt="Eco-Portal Background Image" />
+  <article class="content">
     <header>
-        <h1>Welcome to My Default Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <h1 class="main-title">ЭКО-ПОРТАЛ МОСКВЫ</h1>
     </header>
+    <section class="section">
+      <h2 class="section-title">НОВОСТИ И МЕРОПРИЯТИЯ</h2>
+      <div class="news-wrapper">
+        <div class="news-column">
+          <article class="main-news-container">
+            <div class="main-news">
+              <div class="main-news-content">
+                <div class="news-image-wrapper">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8f5d9df44cd4a60f29ad0e50a72a930648d04d351877f0b75a8fdf036a9b47e?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" class="news-image" alt="Top News Image" />
+                </div>
+                <div class="news-text-wrapper">
+                  <div class="news-text">
+                    <h3 class="news-title">ТОП НОВОСТЬ</h3>
+                    <p class="news-description">i wonder how, I wonder why yesterday you told me ‘bout the blue blue sky and all that i can see is just a yellow lemon tree.</p>
+                    <a href="#" class="read-more" tabindex="0">Читать дальше</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <aside class="mini-news-container">
+            <div class="mini-news">
+              <div class="mini-news-block">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ceb3d3ce6aee5d167e503b79677531c7b9512a87b320f17fd57ea46e607b6538?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" class="mini-news-img" alt="Mini News Image 1" />
+                <div class="mini-news-text">
+                  <h4 class="mini-news-title">Экотон <br /> в парке Зарядье 18.09.24</h4>
+                  <p class="mini-news-description">Вот мы восьмой час сидим под кустом...</p>
+                </div>
+              </div>
+              <div class="mini-news-block-2">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ceb3d3ce6aee5d167e503b79677531c7b9512a87b320f17fd57ea46e607b6538?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" class="mini-news-img-2" alt="Mini News Image 2" />
+                <div class="mini-news-text-2">
+                  <h4 class="mini-news-title">Экотон <br /> в парке Зарядье 18.09.24</h4>
+                  <p class="mini-news-description">Вот мы восьмой час сидим под кустом...</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </article>
+</section>
 
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            
-        </section>
+<style>
+.img-container {
+    max-width: 100%;
+}
+.responsive-img {
+    aspect-ratio: 1.55;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+}
+@media (max-width: 991px) {
+    .img-container {
+        max-width: 100%;
+    }
+}
+</style>
+<section class="img-container">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0fcb503e1cc14a86acaf57acaf41dea7ec567698a782901c7e29ce5d9f405a14?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="Description of image" class="responsive-img"/>
+</section>
 
-        <section id="about">
-            <h2>About</h2>
-        </section>
+    <style>
+.img-container {
+    max-width: 100%;
+}
+.responsive-img {
+    aspect-ratio: 1.55;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+}
+@media (max-width: 991px) {
+    .img-container {
+        max-width: 100%;
+    }
+}
+</style>
+<section class="img-container">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/95b4872aa7930c92da03d4a5cd5b1582c8acb4f6a936cfc3575eb7a689128608?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="Description of image" class="responsive-img"/>
+</section>
 
-        <section id="services">
-            <h2>Services</h2>
-        </section>
+    <style>
+.img-container {
+    max-width: 100%;
+}
+.responsive-img {
+    aspect-ratio: 1.55;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+}
+@media (max-width: 991px) {
+    .img-container {
+        max-width: 100%;
+    }
+}
+</style>
+<section class="img-container">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bdeec4c643f81be735cf1274486592e9bfecd2f133cdee7a9cdc48bf769376fb?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="Description of image" class="responsive-img"/>
+</section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-        </section>
-    </main>
+    <style>
+  .responsive-img {
+    aspect-ratio: 1.55;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    z-index: 10;
+  }
 
-    <footer>
-        <p>Do not steal. Or else.</p>
-    </footer>
+  @media (max-width: 991px) {
+    .responsive-img {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<section>
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7dc5078c564e797cf6a05d35b6bbd7bbedfd6c8464e0a211a0acb040b9be4be?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" class="responsive-img" alt="Descriptive text about the image">
+</section>
+
+    <style>
+.footer-container {
+  background-color: rgba(173, 229, 138, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 80px;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .footer-container {
+    padding: 0 20px;
+  }
+}
+
+.footer {
+  background-color: rgba(173, 229, 138, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 93px 60px 59px;
+  width: 100%;
+  max-width: 1440px;
+}
+
+@media (max-width: 991px) {
+  .footer {
+    padding: 0 20px;
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+@media (max-width: 991px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.logo-text {
+  color: rgba(20, 20, 5, 1);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.96px;
+}
+
+.vision-text {
+  margin-top: 23px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+}
+
+.address-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-heading {
+  color: rgba(20, 20, 5, 1);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Involve", sans-serif;
+}
+
+.address-details {
+  margin-top: 35px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.social-icon img {
+  object-fit: contain;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-section,
+.email-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-heading {
+  color: rgba(20, 20, 5, 1);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Involve", sans-serif;
+}
+
+.contact-details {
+  margin-top: 33px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.divider {
+  margin-top: 87px;
+  border: 1px solid rgba(254, 254, 250, 1);
+}
+
+@media (max-width: 991px) {
+  .divider {
+    margin-top: 40px;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.footer-privacy {
+  display: flex;
+  gap: 40px 58px;
+}
+</style>
+
+<section class="footer-container">
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <div class="logo-section">
+          <div class="logo-text">Logo</div>
+          <div class="vision-text"> Our vision is to provide convenience and help increase your sales business. </div>
+        </div>
+      </div>
+      <div class="footer-col address-section">
+        <div class="address-heading">Адрес</div>
+        <div class="address-details">ул. Варварка, 6, стр. 1</div>
+      </div>
+    </div>
+    <div class="footer-content social-icons">
+      <div class="social-icon"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0e64772da4334d32bfd4b63badc7a24c2144d2ea6781669d1721c82f06de7a94?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="social icon 1" /></div>
+      <div class="social-icon"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b880ca200693f64eeab5e01d2c7afa4deb40d55a01cdc568c414ecc31d5117b4?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="social icon 2" /></div>
+      <div class="social-icon"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/af6fdbc188c0e630ab8433f2bc535792c5a93775c1d8a6281e54833872bbb1aa?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="social icon 3" /></div>
+    </div>
+    <div class="footer-col contact-info">
+      <div class="phone-section">
+        <div class="contact-heading">Телефон</div>
+        <div class="contact-details">+7 (987) 654-32-10</div>
+      </div>
+      <div class="email-section">
+        <div class="contact-heading">E-mail</div>
+        <div class="contact-details">support@green-code-moscow.ru</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom">
+      <div>©2024 All rights reserved</div>
+      <div class="footer-privacy">
+        <div class="privacy-policy">Privacy & Policy</div>
+        <div class="terms-condition">Terms & Condition</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+    <style>
+.footer-container {
+  background-color: rgba(173, 229, 138, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 80px;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .footer-container {
+    padding: 0 20px;
+  }
+}
+
+.footer {
+  background-color: rgba(173, 229, 138, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 93px 60px 59px;
+  width: 100%;
+  max-width: 1440px;
+}
+
+@media (max-width: 991px) {
+  .footer {
+    padding: 0 20px;
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+@media (max-width: 991px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.logo-text {
+  color: rgba(20, 20, 5, 1);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.96px;
+}
+
+.vision-text {
+  margin-top: 23px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+}
+
+.address-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-heading {
+  color: rgba(20, 20, 5, 1);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Involve", sans-serif;
+}
+
+.address-details {
+  margin-top: 35px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.social-icon img {
+  object-fit: contain;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-section,
+.email-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-heading {
+  color: rgba(20, 20, 5, 1);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Involve", sans-serif;
+}
+
+.contact-details {
+  margin-top: 33px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.divider {
+  margin-top: 87px;
+  border: 1px solid rgba(254, 254, 250, 1);
+}
+
+@media (max-width: 991px) {
+  .divider {
+    margin-top: 40px;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  color: var(--text-color, #141405);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.footer-privacy {
+  display: flex;
+  gap: 40px 58px;
+}
+</style>
+
+<section class="footer-container">
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <div class="logo-section">
+          <div class="logo-text">Logo</div>
+          <div class="vision-text"> Our vision is to provide convenience and help increase your sales business. </div>
+        </div>
+      </div>
+      <div class="footer-col address-section">
+        <div class="address-heading">Адрес</div>
+        <div class="address-details">ул. Варварка, 6, стр. 1</div>
+      </div>
+    </div>
+    <div class="footer-content social-icons">
+      <div class="social-icon"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0e64772da4334d32bfd4b63badc7a24c2144d2ea6781669d1721c82f06de7a94?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="social icon 1" /></div>
+      <div class="social-icon"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b880ca200693f64eeab5e01d2c7afa4deb40d55a01cdc568c414ecc31d5117b4?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="social icon 2" /></div>
+      <div class="social-icon"><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/af6fdbc188c0e630ab8433f2bc535792c5a93775c1d8a6281e54833872bbb1aa?placeholderIfAbsent=true&apiKey=e4a140bf40974657bc3cbcc152bc154e" alt="social icon 3" /></div>
+    </div>
+    <div class="footer-col contact-info">
+      <div class="phone-section">
+        <div class="contact-heading">Телефон</div>
+        <div class="contact-details">+7 (987) 654-32-10</div>
+      </div>
+      <div class="email-section">
+        <div class="contact-heading">E-mail</div>
+        <div class="contact-details">support@green-code-moscow.ru</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-bottom">
+      <div>©2024 All rights reserved</div>
+      <div class="footer-privacy">
+        <div class="privacy-policy">Privacy & Policy</div>
+        <div class="terms-condition">Terms & Condition</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+    
+    
 </body>
 </html>
