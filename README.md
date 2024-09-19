@@ -13,3 +13,18 @@
 ![organize](https://github.com/user-attachments/assets/1e233105-778e-4e91-8df1-380e5dfd191d)
 
 ![about us](https://github.com/user-attachments/assets/b17334b1-9494-475d-b921-b0ecc9311fc7)
+
+Страницы авторизации:
+
+![login](https://github.com/user-attachments/assets/b66e8328-0ab1-46de-bbf7-4e04309b51bf)
+
+![register q](https://github.com/user-attachments/assets/05945983-7f9f-46de-a83d-81f7e9e60121)
+
+![register pers](https://github.com/user-attachments/assets/7b87a002-cb86-49fd-96a5-e926d8a16702)
+![register org](https://github.com/user-attachme
+![register gov](https://github.com/user-attachments/assets/275f7d18-b1f2-432c-8f50-c7660b3a0883)
+nts/assets/14c608da-f641-4895-bd6a-a78b5cf99043)
+
+И небольшая порция страницы для организатора, для добавления участников и мероприятий
+
+![register event](https://github.com/user-attachments/assets/1645b155-13cb-4b12-be6c-ea7f8e2f7e9b)
